@@ -51,9 +51,7 @@ cart.forEach((prod) => {
                 </div>
                 <div class="mt-2">
                     Amount: $
-                    <span class="amount">${(price * 0.8 * qty).toFixed(
-                      2
-                    )}</span>
+                    <span class="amount">${price * 0.8 * qty}</span>
                 </div>
             </div>
         </div>
@@ -88,17 +86,15 @@ function calcTotal() {
   // Subtotal:
   const amount = document.querySelectorAll(".amount");
   const subtotal = Array.from(amount).reduce((t, i) => t + +i.textContent, 0); // Array.from(amount)  SAME  [...amount]
-  document.querySelector(".subt").textContent = subtotal;
+  document.querySelector(".subt").textContent = subtotal.toFixed(2);
 
   // Tax:
   tax = (subtotal * 19) / 100;
   document.querySelector(".tax").textContent = tax.toFixed(2);
 
   // Shipping:
-  const shipping = 8.0;
-  document.querySelector(".shipping").textContent = (
-    subtotal > 0 ? shipping : 0
-  ).toFixed(2);
+  const shipping = subtotal > 0 ? 8.0 : 0;
+  document.querySelector(".shipping").textContent = shipping.toFixed(2);
 
   // Total:
   document.querySelector(".total").textContent = (
