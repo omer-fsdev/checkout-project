@@ -19,7 +19,7 @@ const shipping = 7;
 cart.forEach((prod) => {
   const { name, price, qty, img } = prod;
   document.querySelector("#prod-rows").innerHTML += `
-  <div class="card mb-3" style="max-width: 540px;">
+  <div class="card mb-3" style="max-width: 448px;">
     <div class="row g-0">
         <div class="col-md-5">
             <img src= ${img}  class="w-100 rounded-start" alt="product-image">
