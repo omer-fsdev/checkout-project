@@ -51,7 +51,9 @@ cart.forEach((prod) => {
                 </div>
                 <div class="mt-2">
                     Amount: $
-                    <span class="amount">${price * 0.8 * qty}</span>
+                    <span class="amount">${(price * 0.8 * qty).toFixed(
+                      2
+                    )}</span>
                 </div>
             </div>
         </div>
